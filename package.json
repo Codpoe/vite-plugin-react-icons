@@ -1,0 +1,58 @@
+{
+  "name": "vite-plugin-react-icons",
+  "version": "0.0.1",
+  "description": "Access thousands of icons as React components in Vite",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codpoe/vite-plugin-react-icons"
+  },
+  "author": "codpoe <codpoe.me@gmail.com>",
+  "files": [
+    "dist",
+    "client.d.ts"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "tsc -w",
+    "build": "rimraf dist && tsc",
+    "example:dev": "pnpm -r --filter example exec npm run dev",
+    "example:build": "pnpm -r --filter example exec npm run build",
+    "prepublishOnly": "npm run build",
+    "release": "np --message \"chore: release v%s\""
+  },
+  "dependencies": {
+    "@iconify/json-tools": "^1.0.10",
+    "@svgr/core": "^5.5.0",
+    "esbuild": "^0.12.15",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.171",
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0",
+    "np": "^7.5.0",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5",
+    "vite": "^2.3.8"
+  },
+  "peerDependencies": {
+    "@iconify/json": "*"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

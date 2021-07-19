@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "lib": ["ESNext"],
+    "declaration": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "moduleResolution": "node",
+    "types": ["node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}
